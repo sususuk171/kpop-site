@@ -1,0 +1,264 @@
+/* 기본 리셋 및 폰트 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 내비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #e63946; /* 루비 컬러 */
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: #e63946;
+}
+
+/* 언어 전환 스위치 */
+.lang-switch {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.lang-switch a {
+    padding: 0 4px;
+    transition: color 0.3s ease;
+}
+
+.lang-switch a:hover,
+.lang-switch a.active {
+    color: #e63946;
+}
+
+/* 히어로 섹션 */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* 부드러운 그라데이션 배경 */
+    background: linear-gradient(135deg, #fff3f4 0%, #fde7e9 100%);
+    padding: 0 20px;
+    margin-top: -80px; /* 네비게이션 높이만큼 위로 올려서 전체 화면 채움 */
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+/* CTA 버튼 */
+.cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: #e63946;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #d62828;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.4);
+}
+
+/* 간단한 등장 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 공통 컨테이너 및 섹션 타이틀 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+/* 제품 특징 섹션 */
+.features {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.1);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #fff3f4;
+    color: #e63946;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 0 auto 24px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 반응형 (태블릿 및 모바일) */
+@media (max-width: 768px) {
+    /* 네비게이션 바 세로 정렬 */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 히어로 섹션 텍스트 크기 조절 */
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    /* 제품 특징 섹션 1열 배치 */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .features {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
